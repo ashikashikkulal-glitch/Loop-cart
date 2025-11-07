@@ -1,0 +1,96 @@
+#philosophy .philosophy-section {
+  text-align: center;
+  padding: 100px 20px;
+  background: #fff;
+}
+/* Subtitle paragraph under section title */
+.philosophy-subtext {
+  color: #ffffff !important;           /* ✅ White text so it’s visible */
+  max-width: 800px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+  font-weight: 400;
+  opacity: 0.9;             /* Slight transparency for subtle look */
+  text-align: center;
+}
+
+
+.philosophy-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #c026d3;
+  margin-bottom: 10px;
+}
+
+
+.philosophy-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.philosophy-card {
+  width: 300px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 20px;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: all 0.3s ease;
+}
+
+.philosophy-card:hover {
+  box-shadow: 0 10px 30px rgba(192, 38, 211, 0.2);
+  transform: translateY(-5px);
+}
+
+.icon-circle {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.purple-bg {
+  background-color: #f3e8ff;
+}
+.pink-bg {
+  background-color: #fee2e2;
+}
+.blue-bg {
+  background-color: #e0e7ff;
+}
+
+.icon {
+  font-size: 2.2rem;
+}
+
+.purple {
+  color: #a855f7;
+}
+.pink {
+  color: #ec4899;
+}
+.blue {
+  color: #4338ca;
+}
+
+.philosophy-card h4 {
+  font-weight: 600;
+  margin-top: 10px;
+  color: #111827;
+}
+
+.philosophy-card p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.highlight {
+  box-shadow: 0 10px 40px rgba(255, 0, 64, 0.1);
+}

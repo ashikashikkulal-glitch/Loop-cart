@@ -1,0 +1,85 @@
+.boutiques-section {
+  background-color: #f9f9f9;
+  padding: 100px 0;
+  color: #2b2b2b;
+}
+
+.boutiques-section .subtitle {
+  color: #666;
+  font-size: 1rem;
+}
+
+.search-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 280px;
+}
+
+.search-btn {
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.search-btn:hover {
+  opacity: 0.9;
+}
+
+.dropdown {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.map-container {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.boutique-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 25px 20px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.boutique-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 16px rgba(139, 92, 246, 0.25);
+}
+
+.boutique-card h5 {
+  font-weight: 600;
+  color: #2b2b2b;
+}
+
+.boutique-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.btn-gradient {
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+.btn-gradient:hover {
+  opacity: 0.85;
+}

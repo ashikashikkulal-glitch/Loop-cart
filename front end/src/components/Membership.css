@@ -1,0 +1,20 @@
+.membership-section {
+  background-color: #ffffff;
+  color: #000;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-gradient {
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  color: #fff;
+  border: none;
+}
+
+.btn-gradient:hover {
+  opacity: 0.9;
+}
