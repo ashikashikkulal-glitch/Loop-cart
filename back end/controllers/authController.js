@@ -1,6 +1,15 @@
+// back end/controllers/authController.js
 import User from "../models/user.js";
-import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
+
+/**
+ * Helper to create JWT (keeps controller tidy)
+ */
+function createToken(user) {
+  const secret = process.env.JWT_SECRET || "dev_secret_change_me";
+  return jwt.sign({ id: user._id, email: user.email }, secret, { expiresIn: "7d" });
+}
 
 /**
  * @desc User Signup
@@ -8,38 +17,34 @@ import jwt from "jsonwebtoken";
  */
 export const signup = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const rawName = req.body.name;
+    const rawEmail = req.body.email;
+    const rawPassword = req.body.password;
 
-    // ✅ Check if all fields are provided
-    if (!name || !email || !password) {
-      return res.status(400).json({ message: "All fields are required" });
+    // basic validation
+    if (!rawName || !rawEmail || !rawPassword) {
+      return res.status(400).json({ message: "Name, email and password are required" });
     }
 
-    // ✅ Check if user already exists
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-      return res.status(400).json({ message: "User already exists" });
+    const name = String(rawName).trim();
+    const email = String(rawEmail).trim().toLowerCase();
+    const password = String(rawPassword);
+
+    // check duplicate
+    const existing = await User.findOne({ email });
+    if (existing) {
+      // 409 is more semantically correct, but keep 400-compatible message if frontend expects it
+      return res.status(409).json({ message: "User with this email already exists" });
     }
 
-    // ✅ Hash password
-    const hashedPassword = await bcrypt.hash(password, 10);
+    // Create user — password hashing handled by user model pre-save hook (if present)
+    const user = new User({ name, email, password });
+    await user.save();
 
-    // ✅ Create new user
-    const user = await User.create({
-      name,
-      email,
-      password: hashedPassword,
-    });
+    // create token
+    const token = createToken(user);
 
-    // ✅ Generate JWT Token
-    const token = jwt.sign(
-      { id: user._id, email: user.email },
-      process.env.JWT_SECRET,
-      { expiresIn: "7d" }
-    );
-
-    // ✅ Return success response
-    res.status(201).json({
+    return res.status(201).json({
       success: true,
       message: "Signup successful",
       user: {
@@ -49,9 +54,19 @@ export const signup = async (req, res) => {
       },
       token,
     });
-  } catch (error) {
-    console.error("Signup Error:", error.message);
-    res.status(500).json({ message: "Server error. Please try again later." });
+  } catch (err) {
+    console.error("Signup error:", err);
+
+    // handle duplicate-key race or validation errors more clearly
+    if (err.code === 11000 && err.keyPattern?.email) {
+      return res.status(409).json({ message: "Email already registered" });
+    }
+    if (err.name === "ValidationError") {
+      const messages = Object.values(err.errors).map((e) => e.message).join(", ");
+      return res.status(400).json({ message: messages });
+    }
+
+    return res.status(500).json({ message: "Server error during signup" });
   }
 };
 
@@ -61,34 +76,44 @@ export const signup = async (req, res) => {
  */
 export const login = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const rawEmail = req.body.email;
+    const rawPassword = req.body.password;
 
-    // ✅ Validate input
-    if (!email || !password) {
+    if (!rawEmail || !rawPassword) {
       return res.status(400).json({ message: "Email and password are required" });
     }
 
-    // ✅ Check if user exists
-    const user = await User.findOne({ email });
+    const email = String(rawEmail).trim().toLowerCase();
+    const password = String(rawPassword);
+
+    // Ensure password is selected; many schemas mark password select: false
+    const user = await User.findOne({ email }).select("+password");
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
 
-    // ✅ Check password
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-    if (!isPasswordValid) {
+    // Use model's comparePassword if available, otherwise fallback to bcrypt.compare
+    let isValid = false;
+    if (typeof user.comparePassword === "function") {
+      try {
+        isValid = await user.comparePassword(password);
+      } catch (e) {
+        console.warn("comparePassword threw, falling back to bcrypt:", e);
+        isValid = await bcrypt.compare(password, user.password || "");
+      }
+    } else {
+      // Fallback: bcrypt compare using stored hash
+      isValid = await bcrypt.compare(password, user.password || "");
+    }
+
+    if (!isValid) {
       return res.status(400).json({ message: "Invalid credentials" });
     }
 
-    // ✅ Generate token
-    const token = jwt.sign(
-      { id: user._id, email: user.email },
-      process.env.JWT_SECRET,
-      { expiresIn: "7d" }
-    );
+    const token = createToken(user);
 
-    // ✅ Send response
-    res.status(200).json({
+    // return user (don't return password)
+    return res.status(200).json({
       success: true,
       message: "Login successful",
       user: {
@@ -98,8 +123,8 @@ export const login = async (req, res) => {
       },
       token,
     });
-  } catch (error) {
-    console.error("Login Error:", error.message);
-    res.status(500).json({ message: "Server error. Please try again later." });
+  } catch (err) {
+    console.error("Login error:", err);
+    return res.status(500).json({ message: "Server error during login" });
   }
 };

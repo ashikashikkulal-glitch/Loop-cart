@@ -1,0 +1,177 @@
+/* ==============================
+   Exclusive Access Section
+   ============================== */
+
+.exclusive-access-section {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial,
+    sans-serif;
+  background: #faf6ff;
+  color: #333;
+}
+
+/* Section title + subtitle */
+#exclusive-access h2 {
+  font-size: 2rem;
+  letter-spacing: 0.03em;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #9d4edd, #e754c9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#exclusive-access p {
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==============================
+   Form Container
+   ============================== */
+
+.form-container {
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(123, 44, 191, 0.12);
+  border: 1px solid rgba(157, 78, 221, 0.12);
+}
+
+/* ==============================
+   Form Fields
+   ============================== */
+
+.exclusive-form .form-label {
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.exclusive-form .form-control,
+.exclusive-form .form-select,
+.exclusive-form textarea {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
+  background-color: #faf9ff;
+}
+
+.exclusive-form .form-control:focus,
+.exclusive-form .form-select:focus,
+.exclusive-form textarea:focus {
+  outline: none;
+  border-color: #9d4edd;
+  box-shadow: 0 0 0 3px rgba(157, 78, 221, 0.2);
+  background-color: #ffffff;
+}
+
+/* Placeholder style */
+.exclusive-form ::placeholder {
+  color: #aaa;
+}
+
+/* ==============================
+   Checkbox Group
+   ============================== */
+
+.checkbox-group {
+  margin-top: 1rem;
+}
+
+.checkbox-group > .form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.checkbox-group .form-check-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #e2d6ff;
+  background: #f7f3ff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    transform 0.1s ease;
+}
+
+.checkbox-group .form-check-label:hover {
+  background: #efe4ff;
+  border-color: #c19dff;
+  transform: translateY(-1px);
+}
+
+.checkbox-group .form-check-input {
+  margin-right: 6px;
+}
+
+/* Make checked ones look more “selected” */
+.checkbox-group .form-check-input:checked + span,
+.checkbox-group .form-check-input:checked ~ span {
+  font-weight: 500;
+}
+
+/* ==============================
+   Textarea (Special Requests)
+   ============================== */
+
+.exclusive-form textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* ==============================
+   Submit Button
+   ============================== */
+
+.btn-gradient {
+  background: linear-gradient(90deg, #9d4edd, #e754c9);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 28px;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(157, 78, 221, 0.35);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+}
+
+.btn-gradient:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(157, 78, 221, 0.45);
+}
+
+.btn-gradient:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(157, 78, 221, 0.35);
+}
+
+/* ==============================
+   Responsive
+   ============================== */
+
+@media (max-width: 768px) {
+  .form-container {
+    padding: 1.25rem !important;
+  }
+
+  #exclusive-access h2 {
+    font-size: 1.6rem;
+  }
+
+  .checkbox-group .d-flex {
+    gap: 0.5rem !important;
+  }
+}

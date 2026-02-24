@@ -58,6 +58,29 @@ const Membership = () => {
     }
   };
 
+  // 🔹 When user submits membership form, save demo membership in localStorage
+  const handleCompleteMembership = (e) => {
+    e.preventDefault();
+    if (!selectedPlan) {
+      alert("Please select a membership plan first.");
+      return;
+    }
+
+    const membership = {
+      plan: selectedPlan,
+      startedAt: new Date().toISOString(),
+    };
+
+    // Save for profile page
+    localStorage.setItem("loopcart_membership", JSON.stringify(membership));
+
+    alert(
+      `Demo: ${selectedPlan} membership saved locally.\n(Real app would charge payment + save on backend.)`
+    );
+
+    setSelectedPlan(null);
+  };
+
   return (
     <section id="paid-access" className="py-5 text-center membership-section">
       <div className="container">
@@ -82,7 +105,7 @@ const Membership = () => {
                 )}
                 <h5 className="fw-bold mb-2">{plan.name}</h5>
                 <h2 className="text-dark">
-                  ${plan.price}
+                  ₹{plan.price}
                   <small className="text-muted fs-6">/month</small>
                 </h2>
 
@@ -126,8 +149,12 @@ const Membership = () => {
             className="mt-5 p-4 rounded-4 shadow-sm bg-light text-start mx-auto"
             style={{ maxWidth: "700px" }}
           >
-            <h4 className="fw-bold mb-3">Complete Your Membership</h4>
-            <form>
+            <h4 className="fw-bold mb-1">Complete Your Membership</h4>
+            <p className="text-muted mb-3">
+              Selected Plan: <strong>{selectedPlan}</strong>
+            </p>
+
+            <form onSubmit={handleCompleteMembership}>
               <div className="row">
                 <div className="col-md-6 mb-3">
                   <label className="form-label">Full Name</label>
@@ -163,7 +190,8 @@ const Membership = () => {
                   required
                 />
                 <label className="form-check-label" htmlFor="terms">
-                  I agree to the <a href="#">Membership Terms and Billing Policy</a>
+                  I agree to the{" "}
+                  <a href="#">Membership Terms and Billing Policy</a>
                 </label>
               </div>
 

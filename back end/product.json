@@ -1,0 +1,298 @@
+[
+  {
+    "id": "iphone-16-pro-128",
+    "title": "iPhone 16 Pro 128GB – Titanium",
+    "brand": "Apple",
+    "category": "Smartphone",
+    "price": 136900,
+    "condition": "Second-hand / Certified",
+    "age": "6 months old",
+    "usage": "Lightly used",
+    "warranty": "3 months seller warranty",
+    "images": [
+      "/images/iphone16/1.jpg",
+      "/images/iphone16/2.jpg",
+      "/images/iphone16/3.jpg",
+      "/images/iphone16/4.jpg"
+    ],
+    "specs": {
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "processor": "Apple A18 Pro",
+      "camera": "48 MP + 48 MP + 12 MP | 12 MP Front",
+      "display": "6.3\" Super Retina XDR",
+      "battery": "All-day battery"
+    },
+    "details": "Titanium design, ProMotion, 4K 120 fps Dolby Vision.",
+    "store": {
+      "name": "LoopCart Elite - Hampankatta",
+      "owner": "Rakesh Shetty",
+      "phone": "+91 98450 12345",
+      "address": "1st Floor, City Centre, Hampankatta, Mangaluru 575001",
+      "maps": "https://www.google.com/maps/search/?api=1&query=1st%20Floor%2C%20City%20Centre%2C%20Hampankatta%2C%20Mangaluru%20575001"
+    }
+  },
+  {
+    "id": "asus-tuf-f15-rtx3050",
+    "title": "ASUS TUF Gaming F15 (RTX 3050)",
+    "brand": "ASUS",
+    "category": "Laptop",
+    "price": 67990,
+    "condition": "Second-hand / Certified",
+    "age": "1 year old",
+    "usage": "Moderately used, good condition",
+    "warranty": "1 month testing warranty",
+    "images": [
+      "/images/asus/5.jpg",
+      "/images/asus/6.jpg",
+      "/images/asus/7.jpg",
+      "/images/asus/8.jpg"
+    ],
+    "specs": {
+      "ram": "16 GB",
+      "storage": "512 GB SSD",
+      "processor": "Intel Core i7 12th Gen",
+      "camera": "HD webcam",
+      "display": "15.6\" FHD 144Hz",
+      "battery": "90 Wh"
+    },
+    "details": "Military-grade chassis, Arc Flow Fans, MUX Switch.",
+    "store": {
+      "name": "LoopCart Tech - Balmatta",
+      "owner": "Ankith D’Souza",
+      "phone": "+91 97412 88990",
+      "address": "Balmatta Rd, Near Jyothi, Mangaluru 575003",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Balmatta%20Rd%2C%20Near%20Jyothi%2C%20Mangaluru%20575003"
+    }
+  },
+  {
+    "id": "canon-eos-200d-ii",
+    "title": "Canon EOS 200D Mark II (18-55mm)",
+    "brand": "Canon",
+    "category": "Camera",
+    "price": 56990,
+    "condition": "Second-hand / Certified",
+    "age": "2 years old",
+    "usage": "Well maintained",
+    "warranty": "No warranty",
+    "images": [
+      "/images/canon/1.jpg",
+      "/images/canon/2.jpg",
+      "/images/canon/3.jpg",
+      "/images/canon/4.jpg"
+    ],
+    "specs": {
+      "ram": "-",
+      "storage": "UHS-I SD",
+      "processor": "DIGIC 8",
+      "camera": "24.1 MP, Dual Pixel AF, 4K",
+      "display": "3.0\" Vari-angle Touch",
+      "battery": "LP-E17"
+    },
+    "details": "Lightweight DSLR with eye-detect AF & 4K video.",
+    "store": {
+      "name": "LoopCart Studio - Bejai",
+      "owner": "Rohit Pinto",
+      "phone": "+91 99860 44551",
+      "address": "Bejai Church Rd, Bejai, Mangaluru 575004",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Bejai%20Church%20Rd%2C%20Bejai%2C%20Mangaluru%20575004"
+    }
+  },
+  {
+    "id": "jbl-flip-6",
+    "title": "JBL Flip 6 Portable Bluetooth Speaker",
+    "brand": "JBL",
+    "category": "Audio",
+    "price": 9999,
+    "condition": "Open-box / Like New",
+    "age": "3 months old",
+    "usage": "Barely used",
+    "warranty": "6 months warranty",
+    "images": [
+      "/images/jbl/1.jpg",
+      "/images/jbl/2.jpg",
+      "/images/jbl/3.jpg",
+      "/images/jbl/4.jpg"
+    ],
+    "specs": {
+      "ram": "-",
+      "storage": "-",
+      "processor": "-",
+      "camera": "-",
+      "display": "-",
+      "battery": "12 hrs"
+    },
+    "details": "IP67 waterproof & dustproof, PartyBoost support.",
+    "store": {
+      "name": "LoopCart Audio - Kankanady",
+      "owner": "Sanjana Rai",
+      "phone": "+91 90360 22005",
+      "address": "Pumpwell, Kankanady, Mangaluru 575002",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Pumpwell%2C%20Kankanady%2C%20Mangaluru%20575002"
+    }
+  },
+  {
+    "id": "samsung-55-crystal-uhd",
+    "title": "Samsung 55\" Crystal 4K UHD Smart TV",
+    "brand": "Samsung",
+    "category": "Television",
+    "price": 52999,
+    "condition": "Second-hand",
+    "age": "1.5 years old",
+    "usage": "Home used",
+    "warranty": "No warranty",
+    "images": [
+      "/images/samsung/1.jpg",
+      "/images/samsung/2.jpg",
+      "/images/samsung/3.jpg",
+      "/images/samsung/4.jpg"
+    ],
+    "specs": {
+      "ram": "-",
+      "storage": "-",
+      "processor": "Crystal Processor 4K",
+      "camera": "-",
+      "display": "55\" 4K UHD, HDR10+",
+      "battery": "-"
+    },
+    "details": "PurColor, PC on TV, Adaptive Sound.",
+    "store": {
+      "name": "LoopCart Vision - Lalbagh",
+      "owner": "Harish Kumar",
+      "phone": "+91 88844 11007",
+      "address": "Lalbagh Towers, Lalbagh, Mangaluru 575003",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Lalbagh%20Towers%2C%20Lalbagh%2C%20Mangaluru%20575003"
+    }
+  },
+  {
+    "id": "vivo-v40e",
+    "title": "Vivo V40e 5G",
+    "brand": "Vivo",
+    "category": "Smartphone",
+    "price": 28999,
+    "condition": "Second-hand / Certified",
+    "age": "8 months old",
+    "usage": "Lightly used",
+    "warranty": "2 months seller warranty",
+    "images": [
+      "/images/vivo/1.jpg",
+      "/images/vivo/2.jpg",
+      "/images/vivo/3.jpg",
+      "/images/vivo/4.jpg"
+    ],
+    "specs": {
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "processor": "Snapdragon 6 Gen 1",
+      "camera": "50 MP + 2 MP | 32 MP Front",
+      "display": "6.67\" AMOLED 120Hz",
+      "battery": "5000 mAh"
+    },
+    "details": "AMOLED display, OIS camera, smooth performance.",
+    "store": {
+      "name": "LoopCart Mobile Hub - Pumpwell",
+      "owner": "Deepak Nayak",
+      "phone": "+91 98987 11223",
+      "address": "Near Father Muller's Road, Pumpwell, Mangaluru",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Near%20Father%20Muller's%20Road%2C%20Pumpwell%2C%20Mangaluru"
+    }
+  },
+  {
+    "id": "sony-wh-1000xm5",
+    "title": "Sony WH-1000XM5 Wireless Headphones",
+    "brand": "Sony",
+    "category": "Audio",
+    "price": 22999,
+    "condition": "Open-box / Like New",
+    "age": "4 months old",
+    "usage": "Barely used",
+    "warranty": "5 months warranty remaining",
+    "images": [
+      "/images/sony/1.jpg",
+      "/images/sony/2.jpg",
+      "/images/sony/3.jpg",
+      "/images/sony/4.jpg"
+    ],
+    "specs": {
+      "processor": "QN1 Noise-Cancelling Processor",
+      "ram": "-",
+      "storage": "-",
+      "camera": "-",
+      "display": "-",
+      "battery": "30 hours playback"
+    },
+    "details": "Industry-leading noise cancellation with premium comfort.",
+    "store": {
+      "name": "LoopCart AudioStore - Kankanady",
+      "owner": "Shashank Shetty",
+      "phone": "+91 98111 33445",
+      "address": "Opposite KSRTC Bus Stand, Kankanady, Mangaluru",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Opposite%20KSRTC%20Bus%20Stand%2C%20Kankanady%2C%20Mangaluru"
+    }
+  },
+  {
+    "id": "gopro-hero-12",
+    "title": "GoPro Hero 12 Black",
+    "brand": "GoPro",
+    "category": "Action Camera",
+    "price": 32999,
+    "condition": "Second-hand / Excellent",
+    "age": "10 months old",
+    "usage": "Used for travel only",
+    "warranty": "No warranty",
+    "images": [
+      "/images/gopro/1.jpg",
+      "/images/gopro/2.jpg",
+      "/images/gopro/3.jpg",
+      "/images/gopro/4.jpg"
+    ],
+    "specs": {
+      "processor": "GP2 Processor",
+      "camera": "27 MP, 5.3K60 / 4K120",
+      "storage": "microSD UHS-II",
+      "display": "Front + Rear LCD",
+      "battery": "Enduro Battery 1720 mAh"
+    },
+    "details": "Stabilized 5.3K video, horizon lock, rugged waterproof build.",
+    "store": {
+      "name": "LoopCart Camera Pro - Bejai",
+      "owner": "Naveen Crasta",
+      "phone": "+91 98455 22100",
+      "address": "Bejai Market Road, Bejai, Mangaluru",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Bejai%20Market%20Road%2C%20Bejai%2C%20Mangaluru"
+    }
+  },
+  {
+    "id": "dell-xps-15-2023",
+    "title": "Dell XPS 15 (2023)",
+    "brand": "Dell",
+    "category": "Laptop",
+    "price": 154999,
+    "condition": "Second-hand / Premium Certified",
+    "age": "1 year old",
+    "usage": "Well maintained",
+    "warranty": "1 month testing warranty",
+    "images": [
+      "/images/dell/1.jpg",
+      "/images/dell/2.jpg",
+      "/images/dell/3.jpg",
+      "/images/dell/4.jpg"
+    ],
+    "specs": {
+      "processor": "Intel Core i7-13700H",
+      "ram": "16 GB DDR5",
+      "storage": "1 TB SSD NVMe",
+      "camera": "1080p FHD webcam",
+      "display": "15.6\" OLED 3.5K",
+      "battery": "86 Wh"
+    },
+    "details": "Premium aluminum build, OLED display, RTX graphics.",
+    "store": {
+      "name": "LoopCart Premium Laptops - Lalbagh",
+      "owner": "Vishal Bhat",
+      "phone": "+91 98989 44199",
+      "address": "Lalbagh Main Road, Near MCC Bank, Mangaluru",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Lalbagh%20Main%20Road%2C%20Near%20MCC%20Bank%2C%20Mangaluru"
+    }
+  }
+]

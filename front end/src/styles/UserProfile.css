@@ -1,0 +1,165 @@
+.profile-wrapper {
+  padding-top: 120px;
+  max-width: 900px;
+  margin: 0 auto 80px;
+}
+
+/* Card layout */
+.profile-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px 26px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+}
+
+/* Top row: avatar + basic info */
+.profile-header {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 18px;
+  margin-bottom: 20px;
+}
+
+.profile-avatar {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ff53b3, #ad39ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-main-info h3 {
+  margin: 0 0 4px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.profile-main-info p {
+  margin: 0;
+  color: #6b7280;
+}
+
+.profile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: #eef2ff;
+  color: #4f46e5;
+  margin-top: 8px;
+}
+
+/* Tabs */
+.profile-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 8px;
+}
+
+.profile-tab-btn {
+  background: transparent;
+  box-shadow: none;
+  color: #6b7280;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+.profile-tab-btn:hover {
+  background: #f3f4ff;
+  transform: none;
+}
+
+.profile-tab-btn.active {
+  background: #4f46e5;
+  color: #fff;
+}
+
+/* Grid layout for Overview */
+.profile-overview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 18px;
+}
+
+.profile-section-card {
+  background: #f9fafb;
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.profile-section-card h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Edit profile form */
+.profile-form label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.profile-form .form-control,
+.profile-form .form-select {
+  border-radius: 10px;
+}
+
+.avatar-upload {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.avatar-upload input[type="file"] {
+  font-size: 13px;
+}
+
+/* Change password */
+.password-hint {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Membership badge */
+.membership-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: #ecfeff;
+  color: #0e7490;
+}
+
+/* Small screen tweaks */
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .profile-overview-grid {
+    grid-template-columns: 1fr;
+  }
+}

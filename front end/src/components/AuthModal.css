@@ -1,93 +1,144 @@
+/* ===========================
+   Overlay
+   =========================== */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.55);
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);  /* darker + nicer */
+  backdrop-filter: blur(6px);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 
+/* ===========================
+   Modal card
+   =========================== */
 .auth-modal {
-  background: #fff;
-  border-radius: 12px;
+  background: #ffffff;
+  border-radius: 20px;
   width: 420px;
-  max-height: 90vh;
-  overflow-y: auto;
-  padding: 25px 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  max-width: 95vw;
+
+  /* 🔥 keep full card inside the viewport */
+  max-height: 86vh;
+
+  padding: 22px 24px 18px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.45);
   animation: fadeIn 0.3s ease-in-out;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;            /* hide outer scrollbar */
 }
 
+/* all scroll (for long Sign Up) happens inside this */
+.auth-modal-inner {
+  overflow-y: auto;
+  padding-right: 4px;          /* space for scrollbar */
+
+  /* 🔥 inner scroll area height */
+  max-height: calc(86vh - 30px);
+}
+
+/* ===========================
+   Header
+   =========================== */
 .auth-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 12px;
 }
 
 .auth-header h2 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 600;
-  color: #333;
+  color: #111827;
+  margin: 0;
 }
 
-.auth-header span {
+.auth-header h2 span {
   background: linear-gradient(to right, #7928ca, #ff0080);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
+/* close button */
 .close-btn {
-  background: none;
+  background: rgba(148, 163, 184, 0.2);
   border: none;
-  font-size: 20px;
+  font-size: 18px;
   cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: none;
+}
+.close-btn:hover {
+  background: rgba(148, 163, 184, 0.3);
 }
 
+/* ===========================
+   Tabs (Login / Sign Up)
+   =========================== */
 .tab-container {
-  display: flex;
-  border-bottom: 1px solid #eee;
-  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  padding: 3px;
 }
 
 .tab {
-  flex: 1;
-  background: none;
   border: none;
-  padding: 10px 0;
+  background: transparent;
+  padding: 8px 0;
   font-weight: 500;
-  color: #555;
+  font-size: 14px;
+  color: #6b7280;
+  border-radius: 10px;
   cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: 0.3s;
+  border-bottom: none;
+  transition: 0.2s ease;
+  box-shadow: none;
 }
 
 .tab.active {
-  color: #7b2ff7;
-  border-bottom: 2px solid #7b2ff7;
+  color: #4f46e5;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
 }
 
+/* ===========================
+   Form content
+   =========================== */
 .tab-content {
-  margin-top: 15px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-bottom: 6px;
 }
 
 .tab-content label {
   font-weight: 500;
-  font-size: 14px;
-  color: #333;
+  font-size: 13px;
+  color: #111827;
 }
 
 .tab-content input {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
   font-size: 14px;
   outline: none;
   transition: 0.2s;
@@ -95,13 +146,16 @@
 
 .tab-content input:focus {
   border-color: #7b2ff7;
+  box-shadow: 0 0 0 1px rgba(123, 47, 247, 0.15);
 }
 
+/* Remember / forgot row (if used) */
 .options {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 13px;
+  color: #6b7280;
 }
 
 .options a {
@@ -109,27 +163,31 @@
   text-decoration: none;
 }
 
+/* main submit button */
 .primary-btn {
   background: linear-gradient(to right, #7b2ff7, #ff0080);
   border: none;
   color: #fff;
-  padding: 10px;
+  padding: 11px;
   font-size: 15px;
-  border-radius: 6px;
+  border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 10px;
-  transition: 0.3s;
+  margin-top: 4px;
+  width: 100%;
+  box-shadow: 0 12px 26px rgba(123, 47, 247, 0.45);
 }
-
 .primary-btn:hover {
-  opacity: 0.9;
+  opacity: 0.96;
+  transform: translateY(-1px);
 }
 
+/* switch text under button */
 .switch-text {
   text-align: center;
-  font-size: 14px;
-  color: #555;
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 6px;
 }
 
 .switch-text span {
@@ -138,13 +196,16 @@
   font-weight: 500;
 }
 
+/* ===========================
+   Divider + social buttons
+   =========================== */
 .divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 15px 0;
-  color: #888;
-  font-size: 13px;
+  margin: 10px 0 8px;
+  color: #9ca3af;
+  font-size: 12px;
 }
 
 .divider::before,
@@ -152,36 +213,42 @@
   content: "";
   flex: 1;
   height: 1px;
-  background: #ddd;
+  background: linear-gradient(90deg, transparent, #d1d5db, transparent);
   margin: 0 10px;
 }
 
 .social-buttons {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
 }
 
 .social-btn {
-  width: 90px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 8px 0;
+  width: 70px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 7px 0;
   background: #fff;
-  font-size: 16px;
+  font-size: 15px;
   cursor: pointer;
   transition: 0.2s;
+  box-shadow: 0 4px 10px rgba(148, 163, 184, 0.25);
 }
 
 .social-btn:hover {
-  background: #f7f7f7;
+  background: #f9fafb;
+  transform: translateY(-1px);
 }
 
+/* ===========================
+   Terms row
+   =========================== */
 .terms {
   display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 13px;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 12px;
+  color: #6b7280;
 }
 
 .terms a {
@@ -189,13 +256,31 @@
   text-decoration: none;
 }
 
+/* ===========================
+   Animation
+   =========================== */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.95) translateY(10px);
   }
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ===========================
+   Responsive tweak
+   =========================== */
+@media (max-width: 480px) {
+  .auth-modal {
+    width: 94vw;
+    padding: 18px 16px 14px;
+    max-height: 90vh;
+  }
+
+  .auth-modal-inner {
+    max-height: calc(90vh - 24px);
   }
 }
